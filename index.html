@@ -212,7 +212,7 @@
             recognition.onstart = function() {
                 isListening = true;
                 micBtn.classList.add('listening');
-                statusDisplay.textContent = "正在聆聽...請說中文";
+                statusDisplay.textContent = "正在聆听...请说中文";
                 transcriptDisplay.textContent = "...";
             };
 
@@ -220,8 +220,8 @@
                 isListening = false;
                 micBtn.classList.remove('listening');
                 // 如果不是手動停止，且還沒判斷出結果，恢復提示
-                if (statusDisplay.textContent.includes("聆聽")) {
-                     statusDisplay.textContent = "點擊麥克風重試";
+                if (statusDisplay.textContent.includes("聆听")) {
+                     statusDisplay.textContent = "点击麦克风重试";
                 }
             };
 
@@ -234,7 +234,7 @@
             };
 
             recognition.onerror = function(event) {
-                statusDisplay.textContent = "發生錯誤: " + event.error;
+                statusDisplay.textContent = "发生错误: " + event.error;
                 micBtn.classList.remove('listening');
                 isListening = false;
             };
@@ -288,7 +288,7 @@
             if (cleanUser === cleanTarget || cleanUser.includes(cleanTarget)) {
                 // 答對
                 showFeedback(true);
-                speak("正确"); // 電腦給予語音回饋
+                speak("正確"); // 電腦給予語音回饋
                 setTimeout(nextQuestion, 1500);
             } else {
                 // 答錯
